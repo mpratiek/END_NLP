@@ -91,3 +91,27 @@ Different loss functions that are readily availabe in pytorch could be found in 
 
 
 ## 5. What is the "chain rule" in gradient flow?
+The chain rule is essentially a mathematical formula that helps you calculate the derivative of a composite function. 
+In Neural Networks, we use Chain rule to calculate the derivative of loss function with respect to parameters(weights) in optimization algorithm. 
+
+Above diagram represents a NN with two hidden layers, having 3 and 2 neurons respectively. 
+Forward Propagation: During the feed forward step of NN, predictions are made using input node values, weights and bias.
+Mathematically:
+  O = f (w*x + b)
+Where O is the output of neuron, f is the activation function, w is weight, x is input, and b is bias.
+The similar type of computation will occur at each neuron and the computation will propagate forward till the last neuron.
+
+
+
+
+Back-Propagation: Once we finish the forward propagation, we get prediction at the output layer as O31 . With this output and the actual label, error/loss is calculated. 
+ 
+Here L is loss, y is the predicted output and yhat is the actual output.
+Our objective is to fine tune the network parameters to minimize the error term(cost function), in such a way that the predictions get nearer to actual labels.
+ 
+In our neural network, in order to minimize the cost, we need to find the weight and bias values for which the loss/error returns the smallest value possible. The smaller the loss, the more accurate our predictions are. This is an optimization problem where we have to find the function minima. 
+To find the minima of a function, we can use the gradient descent algorithm as shown in the above figure.
+To calculate the derivative, we use chain rule. This is illustrated in the figure below.
+  
+ 
+
